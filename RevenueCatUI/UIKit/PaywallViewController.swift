@@ -231,10 +231,18 @@ public class PaywallViewController: UIViewController {
             newController.didMove(toParent: self)
 
             NSLayoutConstraint.activate([
-                newController.view.topAnchor.constraint(equalTo: self.view.topAnchor),
-                newController.view.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
-                newController.view.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-                newController.view.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
+                newController.view.topAnchor.constraint(
+                    equalTo: self.view.safeAreaLayoutGuide.topAnchor
+                ),
+                newController.view.bottomAnchor.constraint(
+                    equalTo: self.view.bottomAnchor
+                ),
+                newController.view.leadingAnchor.constraint(
+                    equalTo: self.view.safeAreaLayoutGuide.leadingAnchor
+                ),
+                newController.view.trailingAnchor.constraint(
+                    equalTo: self.view.safeAreaLayoutGuide.trailingAnchor
+                )
             ])
         }
     }
